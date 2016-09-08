@@ -24,7 +24,7 @@ public extension LineSegment {
     }
     
     /// Returns a `CGRect` enclosing line segment.
-    public var bounds: CGRect {
+    public var frame: CGRect {
         let delta = a - b
         return CGRect(x: min(a.x, b.x), y: min(a.y, b.y), width: abs(delta.x), height: abs(delta.y))
     }
