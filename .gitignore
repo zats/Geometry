@@ -26,9 +26,6 @@ xcuserdata/
 *.xccheckout
 *.xcscmblueprint
 
-## Generated docs
-docs/*
-
 ### Swift ###
 # Xcode
 #
