@@ -2,32 +2,38 @@ import CoreGraphics
 
 public typealias Point = CGPoint
 
-public func - (lhs: Point, rhs: Point) -> Point {
-    return Point(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
-}
+public extension Point {
+    public static prefix func - (lhs: Point) -> Point {
+        return Point(x: -lhs.x, y: -lhs.y)
+    }
+    
+    public static func - (lhs: Point, rhs: Point) -> Point {
+        return Point(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
+    }
 
-public func + (lhs: Point, rhs: Point) -> Point {
-    return Point(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
-}
+    public static func + (lhs: Point, rhs: Point) -> Point {
+        return Point(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
+    }
 
-public func -= (lhs: inout Point, rhs: Point) {
-    lhs = lhs - rhs
-}
+    public static func -= (lhs: inout Point, rhs: Point) {
+        lhs = lhs - rhs
+    }
 
-public func += (lhs: inout Point, rhs: Point)  {
-    lhs = lhs + rhs
-}
+    public static func += (lhs: inout Point, rhs: Point)  {
+        lhs = lhs + rhs
+    }
 
-public func * (lhs: Point, rhs: CGFloat) -> Point {
-    return Point(x: lhs.x * rhs, y: lhs.y * rhs)
-}
+    public static func * (lhs: Point, rhs: CGFloat) -> Point {
+        return Point(x: lhs.x * rhs, y: lhs.y * rhs)
+    }
 
-public func * (lhs: CGFloat, rhs: Point) -> Point {
-    return Point(x: rhs.x * lhs, y: rhs.y * lhs)
-}
+    public static func * (lhs: CGFloat, rhs: Point) -> Point {
+        return Point(x: rhs.x * lhs, y: rhs.y * lhs)
+    }
 
-public func / (lhs: Point, rhs: CGFloat) -> Point {
-    return Point(x: lhs.x / rhs, y: lhs.y / rhs)
+    public static func / (lhs: Point, rhs: CGFloat) -> Point {
+        return Point(x: lhs.x / rhs, y: lhs.y / rhs)
+    }
 }
 
 public extension Point {
